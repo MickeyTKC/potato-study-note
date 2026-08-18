@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage 1 · 詞彙與句型 — ICM 講座準備</title>
+<style>
+:root{
+  --paper:#f5f2e9; --surface:#fffdf6; --ink:#26241d; --muted:#6f6352;
+  --line:#ddd3ba; --accent:#8a6d1f; --soft:#f2ead2; --good:#2f6b4f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+ font-family:"Segoe UI","PingFang TC","Microsoft JhengHei","Noto Sans TC","Helvetica Neue",sans-serif;
+ line-height:1.7;font-size:16px}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px 90px}
+.mast{background:#26241d;color:#f5f2e9;padding:36px 0 30px;border-bottom:5px solid var(--accent)}
+.mast .kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#c9b77f;margin:0 0 10px}
+.mast h1{margin:0 0 4px;font-family:Georgia,"Palatino Linotype","Noto Serif TC",serif;font-size:34px;line-height:1.2}
+.mast .sub{font-size:16px;color:#d9d2bd;margin-bottom:10px}
+.mast .meta{font-size:13px;color:#a79e86}
+.actions{margin-top:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+button{font:inherit;background:var(--accent);color:#fffdf6;border:0;border-radius:4px;padding:7px 14px;cursor:pointer}
+button:hover{background:#75591a}
+#prog-lab{font-size:12.5px;color:#c9b77f}
+.prog{height:6px;background:#3d3a30;border-radius:3px;margin-top:10px;overflow:hidden}
+#prog{height:100%;width:0;background:#a98f3f;transition:width .25s}
+section{margin:40px 0}
+h2{font-family:Georgia,"Palatino Linotype","Noto Serif TC",serif;font-size:24px;margin:0 0 4px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+h2 .no{color:var(--accent);font-size:15px;letter-spacing:.1em;font-family:"Segoe UI",sans-serif}
+h2 em{font-style:normal;font-size:14px;color:var(--muted);font-weight:normal}
+.rule{height:3px;background:var(--accent);width:64px;margin:6px 0 18px;border-radius:2px}
+h3{font-size:18px;margin:30px 0 10px;font-family:Georgia,"Palatino Linotype","Noto Serif TC",serif}
+p{margin:10px 0}
+.zh{color:var(--muted)}
+.row{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 16px;margin:10px 0;box-shadow:0 1px 2px rgba(38,36,29,.05)}
+.row label{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;cursor:pointer}
+.row input{width:16px;height:16px;accent-color:var(--good);flex:none;transform:translateY(2px)}
+.term{font-weight:600;font-size:17px}
+.phon{font-size:13px;color:var(--accent);font-family:Consolas,Menlo,monospace}
+.row .zh{font-size:15px}
+.ex{margin:8px 0 2px 26px;font-size:14.5px;color:#3d3a30}
+.ex .zh{color:var(--muted)}
+.sent .term{font-size:15.5px}
+.en{margin:8px 0 2px 26px;font-weight:600;font-size:15.5px}
+.sent .zh{margin-left:26px;font-size:14.5px}
+.note{font-size:13px;color:var(--muted);margin-left:26px}
+.tag{display:inline-block;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;background:var(--soft);color:var(--accent);border-radius:3px;padding:2px 8px;margin-right:8px}
+.callout{background:var(--soft);border-top:3px solid var(--accent);border-radius:0 0 8px 8px;padding:14px 18px;margin:16px 0}
+.callout b.t{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:6px}
+table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:12px 0}
+th{background:#efe7d2;text-align:left;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:#4d4634;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid var(--line);vertical-align:top;font-size:15px}
+tr:nth-child(even) td{background:#fbf8ef}
+footer.nav{margin-top:60px;border-top:2px solid var(--line);padding-top:18px;display:flex;flex-wrap:wrap;gap:8px}
+footer.nav a{color:var(--accent);text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:6px 14px;font-size:14px;background:var(--surface)}
+footer.nav a:hover{border-color:var(--accent)}
+footer.nav a.cur{background:var(--accent);color:#fffdf6;border-color:var(--accent)}
+@media print{
+  body{background:#fff}
+  .mast{background:#26241d !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .actions,.prog{display:none}
+  a{color:inherit;text-decoration:none}
+  section{margin:24px 0}
+  .row{box-shadow:none}
+}
+@media (max-width:640px){
+  body{font-size:15px;line-height:1.6}
+  .wrap{padding:0 14px 70px}
+  .mast{padding:24px 0 22px}
+  .mast h1{font-size:clamp(22px,6.5vw,28px)}
+  .mast .sub{font-size:14px}
+  .mast .kicker{letter-spacing:.14em}
+  .mast .meta{font-size:12px;line-height:1.5}
+  h2{font-size:20px;gap:8px}
+  h2 .no{font-size:13px}
+  h2 em{font-size:13px}
+  .card{padding:14px}
+  .en-line{padding:8px 12px;font-size:14px}
+  .callout{padding:12px 14px}
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  th,td{padding:8px 9px;font-size:14px}
+  th{white-space:nowrap}
+  .row{padding:10px 12px}
+  .row label{align-items:center}
+  .row .ex{margin-left:0}
+  .sent .en,.sent .zh{margin-left:0}
+  .timeline .t{width:auto;min-width:56px;font-size:12.5px}
+  .flow .fbox{flex-basis:140px}
+  .qa .q,.qa .a{padding:9px 12px;font-size:14px}
+  .checklist li{padding:7px 0}
+  footer.nav a{padding:6px 10px;font-size:13px}
+  .stagegrid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+}
+@media (max-width:420px){
+  .mast h1{font-size:22px}
+  .stagegrid{grid-template-columns:1fr}
+  .timeline li{flex-wrap:wrap}
+  .timeline .t{flex-basis:100%}
+  h2 em{display:block}
+  .qlist li{padding:10px 12px}
+}
+</style>
+</head>
+<body>
+<header class="mast">
+  <div class="wrap">
+    <div class="kicker">ICM Asset Management Presentation · 學習筆記</div>
+    <h1>Stage 1 · 詞彙與句型</h1>
+    <div class="sub">Vocabulary &amp; Key Sentences — 活動必用詞彙與實用句子</div>
+    <div class="meta">活動：2026 年 8 月 21 日（五）12:20 ｜ JW Marriott Hong Kong ｜ 預計學習時間：45 分鐘</div>
+    <div class="actions">
+      <button onclick="window.print()">列印 Print</button>
+      <span id="prog-lab"></span>
+    </div>
+    <div class="prog"><div id="prog"></div></div>
+  </div>
+</header>
+
+<div id="toolbar"></div>
+
+<div class="wrap">
+
+  <section>
+    <h2><span class="no">A</span> 活動與場地詞彙 <em>Event &amp; Venue Words</em></h2>
+    <div class="rule"></div>
+    <p>登記、入場、活動流程會用到的詞。讀音用粗體大寫標示重音，例如 <span class="phon">prez-en-TAY-shun</span>。</p>
+
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">presentation</span><span class="phon">prez-en-TAY-shun</span><span class="zh">簡報；演講</span></label>
+      <div class="ex">The presentation starts at 12:20 PM. <span class="zh">講座在中午 12:20 開始。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">presenter</span><span class="phon">prih-ZEN-ter</span><span class="zh">講者；主講人</span></label>
+      <div class="ex">The presenter is Mr. John Courtliff. <span class="zh">講者是 John Courtliff 先生。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">CEO</span><span class="phon">see-ee-OH</span><span class="zh">行政總裁</span></label>
+      <div class="ex">He is the CEO of ICM. <span class="zh">他是 ICM 的行政總裁。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">partner</span><span class="phon">PAR-tner</span><span class="zh">合夥人</span></label>
+      <div class="ex">He is CEO and partner of the firm. <span class="zh">他是公司的行政總裁兼合夥人。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">registration</span><span class="phon">rej-is-TRAY-shun</span><span class="zh">登記；報到</span></label>
+      <div class="ex">Registration starts at 12:00 PM. <span class="zh">登記於中午 12:00 開始。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">venue</span><span class="phon">VEN-yoo</span><span class="zh">場地</span></label>
+      <div class="ex">The venue is JW Marriott Hong Kong. <span class="zh">場地是香港 JW 萬豪酒店。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">ballroom</span><span class="phon">BAWL-room</span><span class="zh">宴會廳</span></label>
+      <div class="ex">Salon 6 is in the ballroom on Level 3. <span class="zh">Salon 6 在三樓的宴會廳。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">welcome remarks</span><span class="phon">WEL-kum rih-MARKS</span><span class="zh">歡迎致辭</span></label>
+      <div class="ex">The event opens with welcome remarks. <span class="zh">活動以歡迎致辭揭開序幕。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">keynote speech</span><span class="phon">KEE-note</span><span class="zh">主題演講</span></label>
+      <div class="ex">His keynote is about alternative investments. <span class="zh">他的主題演講關於另類投資。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">Q&amp;A session</span><span class="phon">kyoo-and-AY</span><span class="zh">問答環節</span></label>
+      <div class="ex">There will be a Q&amp;A session at the end. <span class="zh">結束時會有問答環節。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">networking</span><span class="phon">NET-wur-king</span><span class="zh">交流；建立人脈</span></label>
+      <div class="ex">Please stay for networking after the talk. <span class="zh">講座後請留下來交流。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">business card</span><span class="phon">BIZ-niss card</span><span class="zh">名片</span></label>
+      <div class="ex">May I have your business card? <span class="zh">可以給我你的名片嗎？</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">wealth manager</span><span class="phon">welth MAN-ij-er</span><span class="zh">財富管理經理</span></label>
+      <div class="ex">You can register through your wealth manager. <span class="zh">你可以透過財富管理經理登記。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">financial advisor</span><span class="phon">fye-NAN-shul ad-VY-zer</span><span class="zh">理財顧問</span></label>
+      <div class="ex">Ask your financial advisor for details. <span class="zh">詳情請向你的理財顧問查詢。</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="no">B</span> 投資詞彙 <em>Investment Words</em></h2>
+    <div class="rule"></div>
+    <p>講座最核心的詞彙。先看中文意思，再讀出聲，最後看例句。</p>
+
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">asset management</span><span class="phon">AS-set MAN-ij-ment</span><span class="zh">資產管理</span></label>
+      <div class="ex">ICM is an asset management firm. <span class="zh">ICM 是一家資產管理公司。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">assets under management (AUM)</span><span class="phon">AY-yoo-em</span><span class="zh">管理資產規模</span></label>
+      <div class="ex">ICM manages over two billion dollars in assets. <span class="zh">ICM 管理超過二十億美元的資產。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">alternative investment</span><span class="phon">al-TER-nuh-tiv in-VEST-ment</span><span class="zh">另類投資</span></label>
+      <div class="ex">Real estate is an alternative investment. <span class="zh">房地產屬於另類投資。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">multi-strategy</span><span class="phon">MUL-tee STRAT-uh-jee</span><span class="zh">多策略</span></label>
+      <div class="ex">It is a multi-strategy investment firm. <span class="zh">它是一家多策略投資公司。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">real estate</span><span class="phon">REEL is-TAYT</span><span class="zh">房地產；物業</span></label>
+      <div class="ex">They invest in real estate. <span class="zh">他們投資房地產。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">music royalties</span><span class="phon">MYOO-zik ROY-uhl-teez</span><span class="zh">音樂版稅</span></label>
+      <div class="ex">Music royalties come from streaming. <span class="zh">音樂版稅來自串流播放。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">private credit</span><span class="phon">PRY-vit KRED-it</span><span class="zh">私募信貸；私人信貸</span></label>
+      <div class="ex">Private credit means lending to companies. <span class="zh">私募信貸即向企業放貸。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">institutional allocator</span><span class="phon">in-stuh-TOO-shuh-nul AL-uh-kay-ter</span><span class="zh">機構配置者（機構投資者）</span></label>
+      <div class="ex">Their clients include institutional allocators. <span class="zh">他們的客戶包括機構配置者。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">family office</span><span class="phon">FAM-lee OF-iss</span><span class="zh">家族辦公室</span></label>
+      <div class="ex">Family offices manage wealthy families&rsquo; money. <span class="zh">家族辦公室管理富有家族的金錢。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">capital flows</span><span class="phon">KAP-ih-tul flohz</span><span class="zh">資金流動</span></label>
+      <div class="ex">They focus on cross-border capital flows. <span class="zh">他們專注於跨境資金流動。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">cross-border</span><span class="phon">KROSS-BOR-der</span><span class="zh">跨境</span></label>
+      <div class="ex">Cross-border investing moves money between countries. <span class="zh">跨境投資令資金在國家之間流動。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">tax-efficient</span><span class="phon">TAKS-ee-FISH-uhnt</span><span class="zh">稅務高效；節稅的</span></label>
+      <div class="ex">They build tax-efficient structures. <span class="zh">他們建立節稅的架構。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">yield</span><span class="phon">yeeld</span><span class="zh">收益率（定期收入）</span></label>
+      <div class="ex">Private credit offers a steady yield. <span class="zh">私募信貸提供穩定的收益率。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">diversification</span><span class="phon">dye-vur-suh-fuh-KAY-shun</span><span class="zh">分散投資</span></label>
+      <div class="ex">Diversification reduces risk. <span class="zh">分散投資可以降低風險。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">liquidity</span><span class="phon">lih-KWID-uh-tee</span><span class="zh">流動性（變現能力）</span></label>
+      <div class="ex">Real estate has lower liquidity. <span class="zh">房地產的流動性較低。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">portfolio</span><span class="phon">port-FOH-lee-oh</span><span class="zh">投資組合</span></label>
+      <div class="ex">A portfolio is a collection of investments. <span class="zh">投資組合是一系列投資的集合。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">fund</span><span class="phon">fund</span><span class="zh">基金</span></label>
+      <div class="ex">They raise money through funds. <span class="zh">他們透過基金籌集資金。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">investor</span><span class="phon">in-VEST-er</span><span class="zh">投資者</span></label>
+      <div class="ex">The investors are institutions and family offices. <span class="zh">投資者包括機構和家族辦公室。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">return</span><span class="phon">rih-TURN</span><span class="zh">回報</span></label>
+      <div class="ex">Investors expect a good return. <span class="zh">投資者期望良好的回報。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">risk</span><span class="phon">risk</span><span class="zh">風險</span></label>
+      <div class="ex">Every investment has some risk. <span class="zh">每項投資都有一定風險。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">headquarters</span><span class="phon">HEAD-kwawr-terz</span><span class="zh">總部</span></label>
+      <div class="ex">The headquarters is in Calgary, Canada. <span class="zh">總部位於加拿大卡加利。</span></div>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" class="done"><span class="term">expansion</span><span class="phon">ik-SPAN-shun</span><span class="zh">擴張；拓展</span></label>
+      <div class="ex">ICM is expanding to Hong Kong. <span class="zh">ICM 正拓展至香港。</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="no">C</span> 數字與日期練習 <em>Numbers &amp; Dates</em></h2>
+    <div class="rule"></div>
+    <p>講座中最常聽到的數字，先練熟，現場聽到就不會慌。英文讀數字時，每個數字分開讀，最後一個位才讀單位。</p>
+    <table>
+      <tr><th style="width:30%">寫法</th><th style="width:35%">英文讀法</th><th>中文</th></tr>
+      <tr><td>$2.0 billion</td><td>two point zero billion</td><td>二十億（美元）— 留意 <b>two</b> 和 <b>billion</b></td></tr>
+      <tr><td>August 21, 2026</td><td>August twenty-first, twenty twenty-six</td><td>二〇二六年八月二十一日</td></tr>
+      <tr><td>12:20 PM</td><td>twelve twenty PM</td><td>中午十二時二十分</td></tr>
+      <tr><td>Level 3</td><td>level three</td><td>三樓</td></tr>
+      <tr><td>Salon 6</td><td>salon six</td><td>「Salon 6」宴會廳</td></tr>
+      <tr><td>Friday</td><td>Friday</td><td>星期五</td></tr>
+    </table>
+    <div class="callout">
+      <b class="t">聆聽提示</b>
+      聽不懂完整句子不要緊，把<b>名字、數字、年份</b>先記下來，會後再核對。數字是英文講座裏最容易掌握的資訊。
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="no">D</span> 實用句型 <em>Key Sentences</em></h2>
+    <div class="rule"></div>
+    <p>背熟這 12 句，登記、交流、問問題都夠用。每句讀出聲三次，直到可以不用看稿。</p>
+
+    <div class="row sent">
+      <label><input type="checkbox" class="done"><span class="term">1. 打招呼 Greeting</span></label>
+      <div class="en">Good afternoon. It&rsquo;s nice to meet you.</div>
+      <div class="zh">午安，很高興認識你。</div>
+      <div class="note">對任何人都適用，是最安全的第一句。</div>
+    </div>
+    <div class="row sent">
+      <label><input type="checkbox" class="done"><span class="term">2. 自我介紹 Self-introduction</span></label>
+      <div class="en">My name is ____. I&rsquo;m still learning about finance.</div>
+      <div class="zh">我叫＿＿＿。我還在學習金融知識。</div>
+      <div class="note">講完名字再加這句，對方就會用簡單的英文和你說話。</div>
+    </div>
+    <div class="row sent">
+      <label><input type="checkbox" class="done"><span class="term">3. 坦白英文未夠好</span></label>
+      <div class="en">Please excuse my English — I&rsquo;m still practicing.</div>
+      <div class="zh">請見諒我的英文，我還在練習。</div>
+      <div class="note">坦白說反而令對方更願意遷就你。</div>
+    </div>
+    <div class="row sent">
+      <label><input type="checkbox" class="done"><span class="term">4. 請重複一次</span></label>
+      <div class="en">Sorry, could you say that again, please?</div>
+      <div class="zh">對不起，可以請你再說一次嗎？</div>
+      <div class="note">聽唔明就即刻講呢句，唔好估。</div>
+    </div>
+    <div class="row sent">
+      <label><input type="checkbox" class="done"><span class="term">5. 請說慢一點</span></label>
+      <div class="en">Could you speak a little more slowly, please?</div>
+      <div class="zh">可以請你說慢一點嗎？</div>
+      <div class="note">有禮貌，任何人都樂意配合。</div>
+    </div>
+    <div class="row sent">
+      <label><input type="checkbox" class="done"><span class="term">6. 問詞語意思</span></label>
+      <div class="en">Excuse me, what does &ldquo;music royalties&rdquo; mean?</div>
+      <div class="zh">請問「music royalties」是什麼意思？</div>
+      <div class="note">把唔識的字代入 "what does ____ mean?" 就得。</div>
+    </div>
+    <div class="row sent">
+      <label><input type="checkbox" class="done"><span class="term">7. 問公司歷史</span></label>
+      <div class="en">How long has ICM been managing assets?</div>
+      <div class="zh">ICM 管理資產多久了？</div>
+    </div>
+    <div class="row sent">
+      <label><input type="checkbox" class="done"><span class="term">8. 問香港計劃</span></label>
+      <div class="en">What are ICM&rsquo;s plans for Hong Kong?</div>
+      <div class="zh">ICM 在香港有甚麼計劃？</div>
+      <div class="note">最應景的一條問題，講者一定答到。</div>
+    </div>
+    <div class="row sent">
+      <label><input type="checkbox" class="done"><span class="term">9. 交流時打開話題</span></label>
+      <div class="en">Is this your first time at an ICM event?</div>
+      <div class="zh">這是你第一次參加 ICM 活動嗎？</div>
+      <div class="note">開放式問題，對方答完就可以繼續傾。</div>
+    </div>
+    <div class="row sent">
+      <label><input type="checkbox" class="done"><span class="term">10. 讚賞講座</span></label>
+      <div class="en">That was a very interesting talk. Thank you.</div>
+      <div class="zh">這講座很有趣，多謝你。</div>
+      <div class="note">完場後對講者講，係最自然嘅開場。</div>
+    </div>
+    <div class="row sent">
+      <label><input type="checkbox" class="done"><span class="term">11. 要名片</span></label>
+      <div class="en">May I have your business card?</div>
+      <div class="zh">可以給我你的名片嗎？</div>
+    </div>
+    <div class="row sent">
+      <label><input type="checkbox" class="done"><span class="term">12. 道別</span></label>
+      <div class="en">Thank you for your time. Nice to meet you.</div>
+      <div class="zh">多謝你的時間，很高興認識你。</div>
+    </div>
+  </section>
+
+  <footer class="nav">
+    <a href="index.html">總覽 Index</a>
+    <a class="cur" href="note-stage1.html">1 詞彙與句型</a>
+    <a href="note-stage2.html">2 金融基礎</a>
+    <a href="note-stage3.html">3 公司與講者</a>
+    <a href="note-stage4.html">4 當日攻略</a>
+    <a href="note-stage5.html">5 總複習速查</a>
+  </footer>
+
+</div>
+<script>window.STUDY={key:'icm-stage1-done',name:'Stage 1 · 詞彙與句型'};</script>
+<script src="study.js"></script>
+</body>
+</html>

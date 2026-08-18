@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage 5 · 總複習與速查 — ICM 講座準備</title>
+<style>
+:root{
+  --paper:#f5f2e9; --surface:#fffdf6; --ink:#26241d; --muted:#6f6352;
+  --line:#ddd3ba; --accent:#8a6d1f; --soft:#f2ead2; --good:#2f6b4f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+ font-family:"Segoe UI","PingFang TC","Microsoft JhengHei","Noto Sans TC","Helvetica Neue",sans-serif;
+ line-height:1.7;font-size:16px}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px 90px}
+.mast{background:#26241d;color:#f5f2e9;padding:36px 0 30px;border-bottom:5px solid var(--accent)}
+.mast .kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#c9b77f;margin:0 0 10px}
+.mast h1{margin:0 0 4px;font-family:Georgia,"Palatino Linotype","Noto Serif TC",serif;font-size:34px;line-height:1.2}
+.mast .sub{font-size:16px;color:#d9d2bd;margin-bottom:10px}
+.mast .meta{font-size:13px;color:#a79e86}
+.actions{margin-top:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+button{font:inherit;background:var(--accent);color:#fffdf6;border:0;border-radius:4px;padding:7px 14px;cursor:pointer}
+button:hover{background:#75591a}
+#prog-lab{font-size:12.5px;color:#c9b77f}
+.prog{height:6px;background:#3d3a30;border-radius:3px;margin-top:10px;overflow:hidden}
+#prog{height:100%;width:0;background:#a98f3f;transition:width .25s}
+section{margin:40px 0}
+h2{font-family:Georgia,"Palatino Linotype","Noto Serif TC",serif;font-size:24px;margin:0 0 4px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+h2 .no{color:var(--accent);font-size:15px;letter-spacing:.1em;font-family:"Segoe UI",sans-serif}
+h2 em{font-style:normal;font-size:14px;color:var(--muted);font-weight:normal}
+.rule{height:3px;background:var(--accent);width:64px;margin:6px 0 18px;border-radius:2px}
+h3{font-size:18px;margin:30px 0 10px;font-family:Georgia,"Palatino Linotype","Noto Serif TC",serif}
+p{margin:10px 0}
+.zh{color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin:14px 0;box-shadow:0 1px 2px rgba(38,36,29,.05)}
+.card h3{margin:0 0 8px;font-size:18px}
+.en-line{background:var(--soft);border-radius:6px;padding:10px 14px;margin:10px 0;font-size:15px}
+.en-line b{color:var(--accent);font-size:12px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:2px}
+table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:12px 0}
+th{background:#efe7d2;text-align:left;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:#4d4634;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid var(--line);vertical-align:top;font-size:15px}
+tr:nth-child(even) td{background:#fbf8ef}
+.callout{background:var(--soft);border-top:3px solid var(--accent);border-radius:0 0 8px 8px;padding:14px 18px;margin:16px 0}
+.callout b.t{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:6px}
+.checklist{list-style:none;padding:0;margin:12px 0}
+.checklist li{padding:8px 0;border-bottom:1px dashed var(--line);display:flex;gap:10px;align-items:baseline}
+.checklist input{width:16px;height:16px;accent-color:var(--good);flex:none;transform:translateY(2px)}
+.checklist .zh{font-size:13.5px}
+.qlist{counter-reset:q;list-style:none;padding:0;margin:12px 0}
+.qlist li{counter-increment:q;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 16px;margin:10px 0}
+.qlist li::before{content:counter(q);display:inline-block;background:var(--accent);color:#fffdf6;border-radius:50%;width:24px;height:24px;line-height:24px;text-align:center;font-size:13px;font-weight:700;margin-right:10px}
+.qlist .en{font-weight:600;font-size:15.5px}
+.qlist .zh{font-size:14.5px;margin-top:2px}
+footer.nav{margin-top:60px;border-top:2px solid var(--line);padding-top:18px;display:flex;flex-wrap:wrap;gap:8px}
+footer.nav a{color:var(--accent);text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:6px 14px;font-size:14px;background:var(--surface)}
+footer.nav a:hover{border-color:var(--accent)}
+footer.nav a.cur{background:var(--accent);color:#fffdf6;border-color:var(--accent)}
+@media print{
+  body{background:#fff}
+  .mast{background:#26241d !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .actions,.prog{display:none}
+  a{color:inherit;text-decoration:none}
+  section{margin:24px 0}
+  .card{box-shadow:none}
+}
+@media (max-width:640px){
+  body{font-size:15px;line-height:1.6}
+  .wrap{padding:0 14px 70px}
+  .mast{padding:24px 0 22px}
+  .mast h1{font-size:clamp(22px,6.5vw,28px)}
+  .mast .sub{font-size:14px}
+  .mast .kicker{letter-spacing:.14em}
+  .mast .meta{font-size:12px;line-height:1.5}
+  h2{font-size:20px;gap:8px}
+  h2 .no{font-size:13px}
+  h2 em{font-size:13px}
+  .card{padding:14px}
+  .en-line{padding:8px 12px;font-size:14px}
+  .callout{padding:12px 14px}
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  th,td{padding:8px 9px;font-size:14px}
+  th{white-space:nowrap}
+  .row{padding:10px 12px}
+  .row label{align-items:center}
+  .row .ex{margin-left:0}
+  .sent .en,.sent .zh{margin-left:0}
+  .timeline .t{width:auto;min-width:56px;font-size:12.5px}
+  .flow .fbox{flex-basis:140px}
+  .qa .q,.qa .a{padding:9px 12px;font-size:14px}
+  .checklist li{padding:7px 0}
+  footer.nav a{padding:6px 10px;font-size:13px}
+  .stagegrid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+}
+@media (max-width:420px){
+  .mast h1{font-size:22px}
+  .stagegrid{grid-template-columns:1fr}
+  .timeline li{flex-wrap:wrap}
+  .timeline .t{flex-basis:100%}
+  h2 em{display:block}
+  .qlist li{padding:10px 12px}
+}
+</style>
+</head>
+<body>
+<header class="mast">
+  <div class="wrap">
+    <div class="kicker">ICM Asset Management Presentation · 學習筆記</div>
+    <h1>Stage 5 · 總複習與速查</h1>
+    <div class="sub">Summary &amp; Cheat Sheet — 全部內容濃縮，活動當日攜帶版</div>
+    <div class="meta">活動：2026 年 8 月 21 日（五）12:00 登記 ｜ 12:20 開始 ｜ JW Marriott Hong Kong ｜ 預計學習時間：20 分鐘</div>
+    <div class="actions">
+      <button onclick="window.print()">列印 Print</button>
+      <span id="prog-lab"></span>
+    </div>
+    <div class="prog"><div id="prog"></div></div>
+  </div>
+</header>
+
+<div id="toolbar"></div>
+
+<div class="wrap">
+
+  <section>
+    <h2><span class="no">01</span> 活動速查卡 <em>Event Quick Facts</em></h2>
+    <div class="rule"></div>
+    <table>
+      <tr><th style="width:30%">項目</th><th>資料</th></tr>
+      <tr><td>活動</td><td>ICM Asset Management Presentation（全英語）</td></tr>
+      <tr><td>日期／時間</td><td>8 月 21 日（五）· 12:00 登記 · 12:20 開始 · 早到 20 分鐘</td></tr>
+      <tr><td>場地</td><td>Salon 6, Ballroom, Level 3, JW Marriott Hong Kong（金鐘太古廣場）</td></tr>
+      <tr><td>講者</td><td>Mr. John Courtliff — CEO &amp; Partner, ICM</td></tr>
+      <tr><td>公司</td><td>ICM Asset Management — 多策略另類投資，管理 $2.0B+</td></tr>
+      <tr><td>三大策略</td><td>房地產 · 音樂版稅 · 私募信貸</td></tr>
+      <tr><td>聯絡</td><td>info@icmasetmanagement.asia ｜ www.icmasetmanagement.asia</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2><span class="no">02</span> ICM 一分鐘記憶卡 <em>ICM in 60 Seconds</em></h2>
+    <div class="rule"></div>
+    <div class="card">
+      <p>五句背熟，任何人問你「ICM 是甚麼」都能答：</p>
+      <div class="en-line"><b>1</b>ICM is a multi-strategy alternative investment firm.</div>
+      <div class="zh" style="margin:-6px 0 8px 14px">ICM 是一家多策略另類投資公司。</div>
+      <div class="en-line"><b>2</b>It manages over two billion dollars in assets.</div>
+      <div class="zh" style="margin:-6px 0 8px 14px">管理超過二十億美元資產。</div>
+      <div class="en-line"><b>3</b>It invests in real estate, music royalties, and private credit.</div>
+      <div class="zh" style="margin:-6px 0 8px 14px">投資房地產、音樂版稅和私募信貸。</div>
+      <div class="en-line"><b>4</b>Its clients are institutional allocators and family offices.</div>
+      <div class="zh" style="margin:-6px 0 8px 14px">客戶是機構配置者和家族辦公室。</div>
+      <div class="en-line"><b>5</b>It is expanding from Canada to Hong Kong.</div>
+      <div class="zh" style="margin:-6px 0 0 14px">正從加拿大拓展至香港。</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="no">03</span> 終極詞彙表 <em>Top 25 Words</em></h2>
+    <div class="rule"></div>
+    <table>
+      <tr><th style="width:34%">英文</th><th style="width:26%">中文</th><th>記憶點</th></tr>
+      <tr><td>presentation</td><td>簡報；演講</td><td>活動本身</td></tr>
+      <tr><td>registration</td><td>登記；報到</td><td>12:00 開始</td></tr>
+      <tr><td>venue</td><td>場地</td><td>JW Marriott</td></tr>
+      <tr><td>networking</td><td>交流</td><td>講座後的黃金時間</td></tr>
+      <tr><td>Q&amp;A session</td><td>問答環節</td><td>尾段發問</td></tr>
+      <tr><td>asset management</td><td>資產管理</td><td>ICM 的業務</td></tr>
+      <tr><td>AUM</td><td>管理資產規模</td><td>ICM 超過 20 億美元</td></tr>
+      <tr><td>alternative investment</td><td>另類投資</td><td>股票債券以外</td></tr>
+      <tr><td>multi-strategy</td><td>多策略</td><td>三種策略同時做</td></tr>
+      <tr><td>real estate</td><td>房地產</td><td>租金＋升值</td></tr>
+      <tr><td>music royalties</td><td>音樂版稅</td><td>串流播放收租</td></tr>
+      <tr><td>private credit</td><td>私募信貸</td><td>直接借錢畀企業</td></tr>
+      <tr><td>institutional allocator</td><td>機構配置者</td><td>大機構的資金決策人</td></tr>
+      <tr><td>family office</td><td>家族辦公室</td><td>有錢家族的自管財富</td></tr>
+      <tr><td>capital flows</td><td>資金流動</td><td>錢的流向</td></tr>
+      <tr><td>cross-border</td><td>跨境</td><td>國與國之間</td></tr>
+      <tr><td>tax-efficient</td><td>節稅的</td><td>合法慳稅</td></tr>
+      <tr><td>yield</td><td>收益率</td><td>定期收入</td></tr>
+      <tr><td>return</td><td>回報</td><td>總回報</td></tr>
+      <tr><td>risk</td><td>風險</td><td>回報的雙胞胎</td></tr>
+      <tr><td>liquidity</td><td>流動性</td><td>幾快變返現金</td></tr>
+      <tr><td>diversification</td><td>分散投資</td><td>雞蛋唔放一個籃</td></tr>
+      <tr><td>portfolio</td><td>投資組合</td><td>所有投資的集合</td></tr>
+      <tr><td>fund</td><td>基金</td><td>散戶參與另類投資的途徑</td></tr>
+      <tr><td>expansion</td><td>擴張</td><td>ICM 來香港</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2><span class="no">04</span> 十句救命句 <em>10 Survival Sentences</em></h2>
+    <div class="rule"></div>
+    <table>
+      <tr><th style="width:8%">#</th><th style="width:52%">英文</th><th>中文</th></tr>
+      <tr><td>1</td><td>Good afternoon, nice to meet you.</td><td>午安，很高興認識你。</td></tr>
+      <tr><td>2</td><td>My name is ____.</td><td>我叫＿＿＿。</td></tr>
+      <tr><td>3</td><td>I&rsquo;m still learning about finance.</td><td>我還在學習金融知識。</td></tr>
+      <tr><td>4</td><td>Could you say that again, please?</td><td>可以再說一次嗎？</td></tr>
+      <tr><td>5</td><td>Could you speak more slowly, please?</td><td>可以說慢一點嗎？</td></tr>
+      <tr><td>6</td><td>What does <i>____</i> mean?</td><td>＿＿＿是什麼意思？</td></tr>
+      <tr><td>7</td><td>What are ICM&rsquo;s plans for Hong Kong?</td><td>ICM 在香港有甚麼計劃？</td></tr>
+      <tr><td>8</td><td>May I have your business card?</td><td>可以給我你的名片嗎？</td></tr>
+      <tr><td>9</td><td>Thank you for your time.</td><td>多謝你的時間。</td></tr>
+      <tr><td>10</td><td>It was nice to meet you.</td><td>很高興認識你。</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2><span class="no">05</span> 三條必問問題 <em>3 Questions to Ask</em></h2>
+    <div class="rule"></div>
+    <ol class="qlist">
+      <li>
+        <div class="en">What advice would you give to someone who is new to alternative investments?</div>
+        <div class="zh">對剛接觸另類投資的人，你有甚麼建議？</div>
+      </li>
+      <li>
+        <div class="en">What are ICM&rsquo;s plans for Hong Kong?</div>
+        <div class="zh">ICM 在香港有甚麼計劃？</div>
+      </li>
+      <li>
+        <div class="en">How do music royalties work as an investment?</div>
+        <div class="zh">音樂版稅作為投資是如何運作的？</div>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2><span class="no">06</span> 最後檢查清單 <em>Final Checklist</em></h2>
+    <div class="rule"></div>
+    <ul class="checklist">
+      <li><input type="checkbox" class="done"><span><b>背熟 5 句開場白</b>（第 04 節）</span></li>
+      <li><input type="checkbox" class="done"><span><b>記住 3 個數字</b>：$2.0B ・ 12:20 ・ Level 3</span></li>
+      <li><input type="checkbox" class="done"><span><b>準備好 3 條問題</b>（第 05 節）</span></li>
+      <li><input type="checkbox" class="done"><span><b>帶名片、筆記、筆</b></span></li>
+      <li><input type="checkbox" class="done"><span><b>提早 20 分鐘到達</b>（11:40–11:45）</span></li>
+      <li><input type="checkbox" class="done"><span><b>活動後 24 小時內寄感謝電郵</b>（範本見 Stage 4）</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="no">07</span> 完結語 <em>You&rsquo;re Ready</em></h2>
+    <div class="rule"></div>
+    <div class="callout">
+      <b class="t">祝活動順利</b>
+      你已經完成五階段準備：詞彙、金融知識、公司背景、當日攻略，全部都在你手上。最緊要係<b>享受過程、勇敢開口</b>。帶走 3 個重點、認識 2 位新朋友，你就贏了。Good luck! 🎉<br>
+      <span class="zh">（如果活動後想跟進或整理筆記，隨時回來找我。）</span>
+    </div>
+  </section>
+
+  <footer class="nav">
+    <a href="index.html">總覽 Index</a>
+    <a href="note-stage1.html">1 詞彙與句型</a>
+    <a href="note-stage2.html">2 金融基礎</a>
+    <a href="note-stage3.html">3 公司與講者</a>
+    <a href="note-stage4.html">4 當日攻略</a>
+    <a class="cur" href="note-stage5.html">5 總複習速查</a>
+  </footer>
+
+</div>
+<script>window.STUDY={key:'icm-stage5-done',name:'Stage 5 · 總複習與速查'};</script>
+<script src="study.js"></script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage 2 · 金融基礎知識 — ICM 講座準備</title>
+<style>
+:root{
+  --paper:#f5f2e9; --surface:#fffdf6; --ink:#26241d; --muted:#6f6352;
+  --line:#ddd3ba; --accent:#8a6d1f; --soft:#f2ead2; --good:#2f6b4f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+ font-family:"Segoe UI","PingFang TC","Microsoft JhengHei","Noto Sans TC","Helvetica Neue",sans-serif;
+ line-height:1.7;font-size:16px}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px 90px}
+.mast{background:#26241d;color:#f5f2e9;padding:36px 0 30px;border-bottom:5px solid var(--accent)}
+.mast .kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#c9b77f;margin:0 0 10px}
+.mast h1{margin:0 0 4px;font-family:Georgia,"Palatino Linotype","Noto Serif TC",serif;font-size:34px;line-height:1.2}
+.mast .sub{font-size:16px;color:#d9d2bd;margin-bottom:10px}
+.mast .meta{font-size:13px;color:#a79e86}
+.actions{margin-top:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+button{font:inherit;background:var(--accent);color:#fffdf6;border:0;border-radius:4px;padding:7px 14px;cursor:pointer}
+button:hover{background:#75591a}
+#prog-lab{font-size:12.5px;color:#c9b77f}
+.prog{height:6px;background:#3d3a30;border-radius:3px;margin-top:10px;overflow:hidden}
+#prog{height:100%;width:0;background:#a98f3f;transition:width .25s}
+section{margin:40px 0}
+h2{font-family:Georgia,"Palatino Linotype","Noto Serif TC",serif;font-size:24px;margin:0 0 4px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+h2 .no{color:var(--accent);font-size:15px;letter-spacing:.1em;font-family:"Segoe UI",sans-serif}
+h2 em{font-style:normal;font-size:14px;color:var(--muted);font-weight:normal}
+.rule{height:3px;background:var(--accent);width:64px;margin:6px 0 18px;border-radius:2px}
+h3{font-size:18px;margin:30px 0 10px;font-family:Georgia,"Palatino Linotype","Noto Serif TC",serif}
+p{margin:10px 0}
+.zh{color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin:14px 0;box-shadow:0 1px 2px rgba(38,36,29,.05)}
+.card h3{margin:0 0 8px;font-size:18px}
+.card h3 .st{color:var(--accent);font-size:12.5px;letter-spacing:.08em;font-family:"Segoe UI",sans-serif;display:block;text-transform:uppercase;margin-bottom:2px}
+.en-line{background:var(--soft);border-radius:6px;padding:10px 14px;margin:10px 0;font-size:15px}
+.en-line b{color:var(--accent);font-size:12px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:2px}
+table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:12px 0}
+th{background:#efe7d2;text-align:left;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:#4d4634;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid var(--line);vertical-align:top;font-size:15px}
+tr:nth-child(even) td{background:#fbf8ef}
+.flow{display:flex;align-items:stretch;gap:8px;flex-wrap:wrap;margin:18px 0}
+.fbox{flex:1 1 160px;background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:8px;padding:14px;text-align:center;font-weight:600;font-size:14.5px}
+.fbox small{display:block;font-weight:400;color:var(--muted);margin-top:4px;font-size:12.5px}
+.farrow{align-self:center;color:var(--accent);font-size:22px;font-weight:700}
+.callout{background:var(--soft);border-top:3px solid var(--accent);border-radius:0 0 8px 8px;padding:14px 18px;margin:16px 0}
+.callout b.t{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:6px}
+.qa{margin:12px 0}
+.qa .q{font-weight:600;background:var(--soft);border-radius:6px 6px 0 0;padding:10px 14px;font-size:15px}
+.qa .a{background:var(--surface);border:1px solid var(--line);border-top:0;border-radius:0 0 6px 6px;padding:10px 14px;font-size:15px}
+.qa .a .zh{font-size:14px}
+footer.nav{margin-top:60px;border-top:2px solid var(--line);padding-top:18px;display:flex;flex-wrap:wrap;gap:8px}
+footer.nav a{color:var(--accent);text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:6px 14px;font-size:14px;background:var(--surface)}
+footer.nav a:hover{border-color:var(--accent)}
+footer.nav a.cur{background:var(--accent);color:#fffdf6;border-color:var(--accent)}
+@media print{
+  body{background:#fff}
+  .mast{background:#26241d !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .actions,.prog{display:none}
+  a{color:inherit;text-decoration:none}
+  section{margin:24px 0}
+  .card{box-shadow:none}
+}
+@media (max-width:640px){
+  body{font-size:15px;line-height:1.6}
+  .wrap{padding:0 14px 70px}
+  .mast{padding:24px 0 22px}
+  .mast h1{font-size:clamp(22px,6.5vw,28px)}
+  .mast .sub{font-size:14px}
+  .mast .kicker{letter-spacing:.14em}
+  .mast .meta{font-size:12px;line-height:1.5}
+  h2{font-size:20px;gap:8px}
+  h2 .no{font-size:13px}
+  h2 em{font-size:13px}
+  .card{padding:14px}
+  .en-line{padding:8px 12px;font-size:14px}
+  .callout{padding:12px 14px}
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  th,td{padding:8px 9px;font-size:14px}
+  th{white-space:nowrap}
+  .row{padding:10px 12px}
+  .row label{align-items:center}
+  .row .ex{margin-left:0}
+  .sent .en,.sent .zh{margin-left:0}
+  .timeline .t{width:auto;min-width:56px;font-size:12.5px}
+  .flow .fbox{flex-basis:140px}
+  .qa .q,.qa .a{padding:9px 12px;font-size:14px}
+  .checklist li{padding:7px 0}
+  footer.nav a{padding:6px 10px;font-size:13px}
+  .stagegrid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+}
+@media (max-width:420px){
+  .mast h1{font-size:22px}
+  .stagegrid{grid-template-columns:1fr}
+  .timeline li{flex-wrap:wrap}
+  .timeline .t{flex-basis:100%}
+  h2 em{display:block}
+  .qlist li{padding:10px 12px}
+}
+</style>
+</head>
+<body>
+<header class="mast">
+  <div class="wrap">
+    <div class="kicker">ICM Asset Management Presentation · 學習筆記</div>
+    <h1>Stage 2 · 金融基礎知識</h1>
+    <div class="sub">Financial Basics — 聽得明講座所需的基礎概念</div>
+    <div class="meta">活動：2026 年 8 月 21 日（五）12:20 ｜ JW Marriott Hong Kong ｜ 預計學習時間：60 分鐘</div>
+    <div class="actions">
+      <button onclick="window.print()">列印 Print</button>
+      <span id="prog-lab"></span>
+    </div>
+    <div class="prog"><div id="prog"></div></div>
+  </div>
+</header>
+
+<div id="toolbar"></div>
+
+<div class="wrap">
+
+  <section>
+    <h2><span class="no">01</span> 資產管理是什麼？ <em>What is Asset Management?</em></h2>
+    <div class="rule"></div>
+    <div class="card">
+      <p><b>白話解釋：</b>資產管理＝專業的人幫客戶管理金錢，並負責投資，目標是令資產增值和產生收入。你可以想像成「專業人士幫你錢生錢」。</p>
+      <div class="en-line"><b>一句英文記住</b>Asset management means managing money for clients and investing it to grow their wealth.</div>
+      <p class="zh">資產管理就是為客戶管理金錢並作出投資，讓財富增長。ICM 就是一家這樣的公司（an asset management firm）。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="no">02</span> 傳統投資 vs 另類投資 <em>Traditional vs Alternative</em></h2>
+    <div class="rule"></div>
+    <table>
+      <tr><th style="width:50%">傳統投資 Traditional</th><th>另類投資 Alternative</th></tr>
+      <tr><td>股票 Stocks</td><td>房地產 Real estate</td></tr>
+      <tr><td>債券 Bonds</td><td>音樂版稅 Music royalties</td></tr>
+      <tr><td>現金及存款 Cash &amp; deposits</td><td>私募信貸 Private credit</td></tr>
+      <tr><td>流動性高：隨時可以買賣</td><td>流動性較低，但可能回報更高、與市場相關性更低</td></tr>
+    </table>
+    <p class="zh">另類投資＝股票、債券、現金以外的投資。ICM 專門做另類投資，所以聽講座時會不停聽到 real estate、music royalties、private credit 這三個詞。</p>
+    <div class="callout">
+      <b class="t">為什麼另類投資有吸引力？</b>
+      ① 與股市相關性低，可分散風險（diversification）；② 能提供穩定收入（如租金、版稅、利息）；③ 門檻較高，一般散戶難以直接參與，競爭較少。一般人通常透過基金（fund）間接參與。
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="no">03</span> ICM 三大策略 <em>ICM&rsquo;s Three Strategies</em></h2>
+    <div class="rule"></div>
+    <p>講座的重心。每個策略記住三件事：<b>是什麼、錢從哪來、一句英文關鍵句</b>。</p>
+
+    <div class="card">
+      <h3><span class="st">Strategy 1</span>房地產 Real Estate</h3>
+      <p><b>是什麼：</b>投資商業或住宅物業、土地，以及物業相關的貸款（property-related debt）。</p>
+      <p><b>錢從哪來：</b>租金收入（rental income）＋ 物業升值（property value growth）。</p>
+      <div class="en-line"><b>一句英文記住</b>Real estate = property. Money comes from rent and rising value.</div>
+      <p class="zh">房地產＝物業。收入來自租金和物業升值。記得：房地產流動性較低，但能提供穩定租金。</p>
+    </div>
+
+    <div class="card">
+      <h3><span class="st">Strategy 2</span>音樂版稅 Music Royalties</h3>
+      <p><b>是什麼：</b>買入歌曲或音樂目錄（music catalog）的版稅權。每次有人串流播放、電台播放或廣告使用，都會產生版稅。</p>
+      <p><b>錢從哪來：</b>每次播放的小額版稅（every stream pays a small royalty）。</p>
+      <div class="en-line"><b>一句英文記住</b>Royalties are like rent for music — every stream pays.</div>
+      <p class="zh">版稅就像音樂的「租金」：每次有人聽，就有一筆小收入。串流時代令這個資產類別快速增長。</p>
+    </div>
+
+    <div class="card">
+      <h3><span class="st">Strategy 3</span>私募信貸 Private Credit</h3>
+      <p><b>是什麼：</b>直接借錢給企業（不經銀行）。基金做「債主」，企業定期還利息。</p>
+      <p><b>錢從哪來：</b>利息收入（interest payments），通常比銀行貸款收益率更高。</p>
+      <div class="en-line"><b>一句英文記住</b>Private credit = companies borrow directly from funds instead of banks.</div>
+      <p class="zh">私募信貸＝企業直接向基金借錢，而不是向銀行借。基金賺取利息，通常回報穩定（steady yield）。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="no">04</span> 關鍵概念 <em>Key Concepts</em></h2>
+    <div class="rule"></div>
+
+    <div class="card">
+      <h3>資產管理規模 AUM（Assets Under Management）</h3>
+      <p>公司代客戶管理的資金總額，是衡量資產管理公司規模最重要的數字。<b>ICM：超過 20 億美元（over $2.0 billion）。</b></p>
+      <div class="en-line"><b>一句英文記住</b>AUM is the total amount of money a firm manages for clients.</div>
+    </div>
+
+    <div class="card">
+      <h3>機構配置者 Institutional Allocators</h3>
+      <p>代表大機構（退休基金、保險公司、捐贈基金）決定把資金投到哪裡的專業人士。他們手握巨額資金，是資產管理公司的主要客戶。</p>
+      <div class="en-line"><b>一句英文記住</b>Institutional allocators decide where big institutions invest their money.</div>
+    </div>
+
+    <div class="card">
+      <h3>家族辦公室 Family Office</h3>
+      <p>管理一個（或幾個）富有家族財富的私人機構。投資目標長遠，非常重視稅務效率和分散投資。</p>
+      <div class="en-line"><b>一句英文記住</b>A family office manages a wealthy family&rsquo;s money — privately and for the long term.</div>
+    </div>
+
+    <div class="card">
+      <h3>稅務高效 Tax-Efficient 與 跨境資金流動 Cross-Border Capital Flows</h3>
+      <p><b>稅務高效</b>＝用合法架構令投資者少交稅。<b>跨境資金流動</b>＝資金由一個國家流入另一個國家（例如加拿大或中東資金流入亞洲）。兩者結合，就是 ICM 的核心業務：幫資金在國與國之間流動時更省稅。</p>
+      <div class="en-line"><b>一句英文記住</b>Tax-efficient means structuring money legally to pay less tax. Cross-border means money moving between countries.</div>
+    </div>
+
+    <div class="card">
+      <h3>收益率 Yield vs 回報 Return</h3>
+      <p><b>Yield（收益率）</b>＝定期收到的收入（利息、租金、版稅）相對投資額的比例。<b>Return（回報）</b>＝總回報，包括收入加升值。</p>
+      <div class="en-line"><b>一句英文記住</b>Yield is the regular income; return is the total gain.</div>
+    </div>
+
+    <div class="card">
+      <h3>流動性 Liquidity、分散 Diversification、風險與回報 Risk &amp; Return</h3>
+      <ul style="margin:6px 0;padding-left:20px">
+        <li><b>流動性</b>：資產多快能變回現金。股票快，房地產慢。slow to sell = low liquidity。</li>
+        <li><b>分散投資</b>：雞蛋不要放在同一個籃子——投資不同資產，降低整體風險。</li>
+        <li><b>風險與回報</b>：高回報通常伴隨高風險。聽講座時留意講者如何解釋他如何控制風險。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="no">05</span> 資金流向圖 <em>How the Money Flows</em></h2>
+    <div class="rule"></div>
+    <div class="flow">
+      <div class="fbox">投資者<br><small>機構配置者<br>家族辦公室</small></div>
+      <div class="farrow">→</div>
+      <div class="fbox">ICM 資產管理<br><small>負責投資決策</small></div>
+      <div class="farrow">→</div>
+      <div class="fbox">三大策略<br><small>房地產 · 音樂版稅<br>私募信貸</small></div>
+      <div class="farrow">→</div>
+      <div class="fbox">回報與收益<br><small>租金 · 版稅 · 利息</small></div>
+    </div>
+    <p class="zh">投資者把資金交給 ICM，ICM 分散投入三大策略，產生收入後再分配給投資者。中間的「跨境、節稅架構」就是 ICM 的增值服務。</p>
+  </section>
+
+  <section>
+    <h2><span class="no">06</span> 你很可能聽到的句子 <em>Sentences You Will Probably Hear</em></h2>
+    <div class="rule"></div>
+    <table>
+      <tr><th style="width:55%">英文（你可能聽到的）</th><th>中文意思</th></tr>
+      <tr><td>&ldquo;We manage over two billion dollars in assets.&rdquo;</td><td>我們管理超過二十億美元資產。</td></tr>
+      <tr><td>&ldquo;Our clients are institutional allocators and family offices.&rdquo;</td><td>我們的客戶是機構配置者和家族辦公室。</td></tr>
+      <tr><td>&ldquo;We focus on tax-efficient, cross-border capital flows.&rdquo;</td><td>我們專注於節稅的跨境資金流動。</td></tr>
+      <tr><td>&ldquo;Real estate provides stable income through rent.&rdquo;</td><td>房地產透過租金提供穩定收入。</td></tr>
+      <tr><td>&ldquo;Music royalties are a growing asset class.&rdquo;</td><td>音樂版稅是增長中的資產類別。</td></tr>
+      <tr><td>&ldquo;Private credit offers attractive yields.&rdquo;</td><td>私募信貸提供吸引的收益率。</td></tr>
+      <tr><td>&ldquo;We are excited to expand into Asia.&rdquo;</td><td>我們很高興拓展至亞洲。</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2><span class="no">07</span> 小測驗 <em>Quick Check</em></h2>
+    <div class="rule"></div>
+    <p>答唔到就返回上面溫習，答到先進入 Stage 3。</p>
+
+    <div class="qa">
+      <div class="q">Q1. ICM 管理多少資產？How much money does ICM manage?</div>
+      <div class="a">超過 20 億美元 — over $2.0 billion in assets。</div>
+    </div>
+    <div class="qa">
+      <div class="q">Q2. 音樂版稅的收入從哪裏來？Where does music royalty income come from?</div>
+      <div class="a">來自串流播放、電台播放等每一次使用 — every stream and play pays a royalty。</div>
+    </div>
+    <div class="qa">
+      <div class="q">Q3. 私募信貸與銀行貸款有何分別？How is private credit different from bank lending?</div>
+      <div class="a">資金直接來自基金（funds），而不是銀行 — companies borrow directly from funds, not banks。</div>
+    </div>
+    <div class="qa">
+      <div class="q">Q4. Yield 和 Return 有甚麼分別？</div>
+      <div class="a">Yield 是定期收入（利息／租金），Return 是總回報（收入＋升值）。</div>
+    </div>
+  </section>
+
+  <footer class="nav">
+    <a href="index.html">總覽 Index</a>
+    <a href="note-stage1.html">1 詞彙與句型</a>
+    <a class="cur" href="note-stage2.html">2 金融基礎</a>
+    <a href="note-stage3.html">3 公司與講者</a>
+    <a href="note-stage4.html">4 當日攻略</a>
+    <a href="note-stage5.html">5 總複習速查</a>
+  </footer>
+
+</div>
+<script>window.STUDY={key:'icm-stage2-done',name:'Stage 2 · 金融基礎知識'};</script>
+<script src="study.js"></script>
+</body>
+</html>

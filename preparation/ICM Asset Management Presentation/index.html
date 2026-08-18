@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ICM 資產管理講座 — 學習筆記總覽</title>
+<style>
+:root{
+  --paper:#f5f2e9; --surface:#fffdf6; --ink:#26241d; --muted:#6f6352;
+  --line:#ddd3ba; --accent:#8a6d1f; --soft:#f2ead2; --good:#2f6b4f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+ font-family:"Segoe UI","PingFang TC","Microsoft JhengHei","Noto Sans TC","Helvetica Neue",sans-serif;
+ line-height:1.7;font-size:16px}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px 90px}
+.mast{background:#26241d;color:#f5f2e9;padding:36px 0 30px;border-bottom:5px solid var(--accent)}
+.mast .kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#c9b77f;margin:0 0 10px}
+.mast h1{margin:0 0 4px;font-family:Georgia,"Palatino Linotype","Noto Serif TC",serif;font-size:34px;line-height:1.2}
+.mast .sub{font-size:16px;color:#d9d2bd;margin-bottom:10px}
+.mast .meta{font-size:13px;color:#a79e86}
+section{margin:40px 0}
+h2{font-family:Georgia,"Palatino Linotype","Noto Serif TC",serif;font-size:24px;margin:0 0 4px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+h2 .no{color:var(--accent);font-size:15px;letter-spacing:.1em;font-family:"Segoe UI",sans-serif}
+h2 em{font-style:normal;font-size:14px;color:var(--muted);font-weight:normal}
+.rule{height:3px;background:var(--accent);width:64px;margin:6px 0 18px;border-radius:2px}
+p{margin:10px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin:14px 0;box-shadow:0 1px 2px rgba(38,36,29,.05)}
+.card h3{margin:0 0 6px;font-size:18px;font-family:Georgia,"Palatino Linotype","Noto Serif TC",serif}
+.card h3 .st{color:var(--accent);font-size:13px;letter-spacing:.08em;font-family:"Segoe UI",sans-serif}
+.zh{color:var(--muted)}
+table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:12px 0}
+th{background:#efe7d2;text-align:left;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:#4d4634;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid var(--line);vertical-align:top;font-size:15px}
+tr:nth-child(even) td{background:#fbf8ef}
+.callout{background:var(--soft);border-top:3px solid var(--accent);border-radius:0 0 8px 8px;padding:14px 18px;margin:16px 0}
+.callout b.t{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:6px}
+.stagegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:14px 0}
+.stage{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:8px;padding:16px 18px;text-decoration:none;color:var(--ink);display:block;box-shadow:0 1px 2px rgba(38,36,29,.05)}
+.stage:hover{border-color:var(--accent);background:#fbf8ef}
+.stage .num{font-family:Georgia,serif;font-size:15px;color:var(--accent);letter-spacing:.08em}
+.stage h3{margin:4px 0 6px;font-size:17px}
+.stage .ph{display:inline-block;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;background:var(--soft);color:var(--accent);border-radius:3px;padding:2px 8px;margin-bottom:8px}
+.stage p{margin:0;font-size:13.5px;color:var(--muted)}
+.tag{display:inline-block;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;background:var(--soft);color:var(--accent);border-radius:3px;padding:2px 8px;margin-right:8px}
+footer.nav{margin-top:60px;border-top:2px solid var(--line);padding-top:18px;display:flex;flex-wrap:wrap;gap:8px}
+footer.nav a{color:var(--accent);text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:6px 14px;font-size:14px;background:var(--surface)}
+footer.nav a:hover{border-color:var(--accent)}
+@media print{
+  body{background:#fff}
+  .mast{background:#26241d !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  a{color:inherit;text-decoration:none}
+}
+@media (max-width:640px){
+  body{font-size:15px;line-height:1.6}
+  .wrap{padding:0 14px 70px}
+  .mast{padding:24px 0 22px}
+  .mast h1{font-size:clamp(22px,6.5vw,28px)}
+  .mast .sub{font-size:14px}
+  .mast .kicker{letter-spacing:.14em}
+  .mast .meta{font-size:12px;line-height:1.5}
+  h2{font-size:20px;gap:8px}
+  h2 .no{font-size:13px}
+  h2 em{font-size:13px}
+  .card{padding:14px}
+  .en-line{padding:8px 12px;font-size:14px}
+  .callout{padding:12px 14px}
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  th,td{padding:8px 9px;font-size:14px}
+  th{white-space:nowrap}
+  .row{padding:10px 12px}
+  .row label{align-items:center}
+  .row .ex{margin-left:0}
+  .sent .en,.sent .zh{margin-left:0}
+  .timeline .t{width:auto;min-width:56px;font-size:12.5px}
+  .flow .fbox{flex-basis:140px}
+  .qa .q,.qa .a{padding:9px 12px;font-size:14px}
+  .checklist li{padding:7px 0}
+  footer.nav a{padding:6px 10px;font-size:13px}
+  .stagegrid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+}
+@media (max-width:420px){
+  .mast h1{font-size:22px}
+  .stagegrid{grid-template-columns:1fr}
+  .timeline li{flex-wrap:wrap}
+  .timeline .t{flex-basis:100%}
+  h2 em{display:block}
+  .qlist li{padding:10px 12px}
+}
+</style>
+</head>
+<body>
+<header class="mast">
+  <div class="wrap">
+    <div class="kicker">Potato Study Note · 活動準備</div>
+    <h1>ICM 資產管理講座</h1>
+    <div class="sub">學習筆記總覽 — 五階段學習路線圖（附速查卡）</div>
+    <div class="meta">活動：ICM Asset Management Presentation ｜ 2026 年 8 月 21 日（五）12:20 開始 ｜ JW Marriott Hong Kong</div>
+  </div>
+</header>
+
+<div id="toolbar"></div>
+
+<div class="wrap">
+
+  <section>
+    <h2><span class="no">01</span> 活動速覽 <em>Event at a Glance</em></h2>
+    <div class="rule"></div>
+    <table>
+      <tr><th style="width:30%">項目</th><th>資料</th></tr>
+      <tr><td>活動名稱</td><td>ICM Asset Management Presentation（ICM 資產管理講座）— 全英語活動</td></tr>
+      <tr><td>講者</td><td>Mr. John Courtliff — 行政總裁兼合夥人（CEO &amp; Partner），ICM Asset Management</td></tr>
+      <tr><td>日期與時間</td><td>2026 年 8 月 21 日（星期五）；登記 12:00 開始；活動 12:20 開始</td></tr>
+      <tr><td>場地</td><td>Salon 6, Ballroom（宴會廳）, Level 3（三樓）, JW Marriott Hong Kong（香港 JW 萬豪酒店，金鐘太古廣場）</td></tr>
+      <tr><td>登記方式</td><td>透過你的財富管理經理或理財顧問登記</td></tr>
+      <tr><td>聯絡</td><td>info@icmasetmanagement.asia ｜ www.icmasetmanagement.asia</td></tr>
+      <tr><td>ICM 簡介</td><td>多策略另類投資公司（房地產、音樂版稅、私募信貸），管理資產超過 20 億美元；總部位於加拿大卡加利，現正拓展香港</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2><span class="no">02</span> 五階段學習路線圖 <em>Your 5-Stage Study Roadmap</em></h2>
+    <div class="rule"></div>
+    <p>按順序學習，每天完成一至兩階段。每一頁都有「已記住」剔選格，進度會自動儲存。</p>
+    <div class="stagegrid">
+      <a class="stage" href="note-stage1.html">
+        <div class="num">STAGE 1</div>
+        <h3>詞彙與句型</h3>
+        <span class="ph">Phase 1</span>
+        <p>活動必用詞彙（40 個，附讀音與例句）+ 12 句實用句型 + 數字聽力練習。約 45 分鐘。</p>
+      </a>
+      <a class="stage" href="note-stage2.html">
+        <div class="num">STAGE 2</div>
+        <h3>金融基礎知識</h3>
+        <span class="ph">Phase 2</span>
+        <p>資產管理、另類投資、三大策略（房地產／音樂版稅／私募信貸）與關鍵概念。約 60 分鐘。</p>
+      </a>
+      <a class="stage" href="note-stage3.html">
+        <div class="num">STAGE 3</div>
+        <h3>公司與講者研究</h3>
+        <span class="ph">Phase 3</span>
+        <p>ICM 公司檔案、講者 John Courtliff、香港擴張背景、演講結構預測與 8 條準備問題。約 40 分鐘。</p>
+      </a>
+      <a class="stage" href="note-stage4.html">
+        <div class="num">STAGE 4</div>
+        <h3>活動當日攻略</h3>
+        <span class="ph">Phase 4</span>
+        <p>時間線、交通、攜帶清單、開場白腳本、聆聽策略、問問題工具箱與跟進電郵範本。約 30 分鐘。</p>
+      </a>
+      <a class="stage" href="note-stage5.html">
+        <div class="num">STAGE 5</div>
+        <h3>總複習與速查</h3>
+        <span class="ph">Phase N</span>
+        <p>全部內容濃縮：速查卡、ICM 一分鐘記憶卡、終極詞彙表、十句救命句與最後檢查清單。約 20 分鐘。</p>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="no">03</span> 學習建議 <em>Study Tips</em></h2>
+    <div class="rule"></div>
+    <div class="callout">
+      <b class="t">給你的四個建議</b>
+      <ul style="margin:0;padding-left:20px">
+        <li><b>讀出聲</b> — 每個詞彙至少大聲讀三次，讀音比拼寫更重要。</li>
+        <li><b>先記數字</b> — 聽英文講座時，數字與名字是最容易掌握的資訊，先練熟。</li>
+        <li><b>每日一階</b> — 8 月 21 日前完成全部五階段，最後一晚只重溫 Stage 5。</li>
+        <li><b>目標要實際</b> — 目的不是「聽得明全部」，而是帶走 3 個重點、認識 2 位新朋友。</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="nav">
+    <a href="index.html">總覽 Index</a>
+    <a href="note-stage1.html">1 詞彙與句型</a>
+    <a href="note-stage2.html">2 金融基礎</a>
+    <a href="note-stage3.html">3 公司與講者</a>
+    <a href="note-stage4.html">4 當日攻略</a>
+    <a href="note-stage5.html">5 總複習速查</a>
+  </footer>
+
+</div>
+<script>window.STUDY={key:'icm-index',name:'總覽'};</script>
+<script src="study.js"></script>
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage 3 · 公司與講者研究 — ICM 講座準備</title>
+<style>
+:root{
+  --paper:#f5f2e9; --surface:#fffdf6; --ink:#26241d; --muted:#6f6352;
+  --line:#ddd3ba; --accent:#8a6d1f; --soft:#f2ead2; --good:#2f6b4f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+ font-family:"Segoe UI","PingFang TC","Microsoft JhengHei","Noto Sans TC","Helvetica Neue",sans-serif;
+ line-height:1.7;font-size:16px}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px 90px}
+.mast{background:#26241d;color:#f5f2e9;padding:36px 0 30px;border-bottom:5px solid var(--accent)}
+.mast .kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#c9b77f;margin:0 0 10px}
+.mast h1{margin:0 0 4px;font-family:Georgia,"Palatino Linotype","Noto Serif TC",serif;font-size:34px;line-height:1.2}
+.mast .sub{font-size:16px;color:#d9d2bd;margin-bottom:10px}
+.mast .meta{font-size:13px;color:#a79e86}
+.actions{margin-top:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+button{font:inherit;background:var(--accent);color:#fffdf6;border:0;border-radius:4px;padding:7px 14px;cursor:pointer}
+button:hover{background:#75591a}
+#prog-lab{font-size:12.5px;color:#c9b77f}
+.prog{height:6px;background:#3d3a30;border-radius:3px;margin-top:10px;overflow:hidden}
+#prog{height:100%;width:0;background:#a98f3f;transition:width .25s}
+section{margin:40px 0}
+h2{font-family:Georgia,"Palatino Linotype","Noto Serif TC",serif;font-size:24px;margin:0 0 4px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+h2 .no{color:var(--accent);font-size:15px;letter-spacing:.1em;font-family:"Segoe UI",sans-serif}
+h2 em{font-style:normal;font-size:14px;color:var(--muted);font-weight:normal}
+.rule{height:3px;background:var(--accent);width:64px;margin:6px 0 18px;border-radius:2px}
+h3{font-size:18px;margin:30px 0 10px;font-family:Georgia,"Palatino Linotype","Noto Serif TC",serif}
+p{margin:10px 0}
+.zh{color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin:14px 0;box-shadow:0 1px 2px rgba(38,36,29,.05)}
+.card h3{margin:0 0 8px;font-size:18px}
+.card h3 .st{color:var(--accent);font-size:12.5px;letter-spacing:.08em;font-family:"Segoe UI",sans-serif;display:block;text-transform:uppercase;margin-bottom:2px}
+.en-line{background:var(--soft);border-radius:6px;padding:10px 14px;margin:10px 0;font-size:15px}
+.en-line b{color:var(--accent);font-size:12px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:2px}
+table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:12px 0}
+th{background:#efe7d2;text-align:left;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:#4d4634;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid var(--line);vertical-align:top;font-size:15px}
+tr:nth-child(even) td{background:#fbf8ef}
+.callout{background:var(--soft);border-top:3px solid var(--accent);border-radius:0 0 8px 8px;padding:14px 18px;margin:16px 0}
+.callout b.t{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:6px}
+.timeline{list-style:none;padding:0;margin:14px 0}
+.timeline li{display:flex;gap:14px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.timeline .t{flex:none;width:120px;font-family:Consolas,Menlo,monospace;font-size:13.5px;color:var(--accent);font-weight:700}
+.timeline .d b{display:block}
+.timeline .d span{font-size:14px;color:var(--muted)}
+.qlist{counter-reset:q;list-style:none;padding:0;margin:12px 0}
+.qlist li{counter-increment:q;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 16px;margin:10px 0}
+.qlist li::before{content:counter(q);display:inline-block;background:var(--accent);color:#fffdf6;border-radius:50%;width:24px;height:24px;line-height:24px;text-align:center;font-size:13px;font-weight:700;margin-right:10px}
+.qlist .en{font-weight:600;font-size:15.5px}
+.qlist .zh{font-size:14.5px;margin-top:2px}
+.qlist .why{font-size:13px;color:var(--good);margin-top:4px}
+footer.nav{margin-top:60px;border-top:2px solid var(--line);padding-top:18px;display:flex;flex-wrap:wrap;gap:8px}
+footer.nav a{color:var(--accent);text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:6px 14px;font-size:14px;background:var(--surface)}
+footer.nav a:hover{border-color:var(--accent)}
+footer.nav a.cur{background:var(--accent);color:#fffdf6;border-color:var(--accent)}
+@media print{
+  body{background:#fff}
+  .mast{background:#26241d !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .actions,.prog{display:none}
+  a{color:inherit;text-decoration:none}
+  section{margin:24px 0}
+  .card{box-shadow:none}
+}
+@media (max-width:640px){
+  body{font-size:15px;line-height:1.6}
+  .wrap{padding:0 14px 70px}
+  .mast{padding:24px 0 22px}
+  .mast h1{font-size:clamp(22px,6.5vw,28px)}
+  .mast .sub{font-size:14px}
+  .mast .kicker{letter-spacing:.14em}
+  .mast .meta{font-size:12px;line-height:1.5}
+  h2{font-size:20px;gap:8px}
+  h2 .no{font-size:13px}
+  h2 em{font-size:13px}
+  .card{padding:14px}
+  .en-line{padding:8px 12px;font-size:14px}
+  .callout{padding:12px 14px}
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  th,td{padding:8px 9px;font-size:14px}
+  th{white-space:nowrap}
+  .row{padding:10px 12px}
+  .row label{align-items:center}
+  .row .ex{margin-left:0}
+  .sent .en,.sent .zh{margin-left:0}
+  .timeline .t{width:auto;min-width:56px;font-size:12.5px}
+  .flow .fbox{flex-basis:140px}
+  .qa .q,.qa .a{padding:9px 12px;font-size:14px}
+  .checklist li{padding:7px 0}
+  footer.nav a{padding:6px 10px;font-size:13px}
+  .stagegrid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+}
+@media (max-width:420px){
+  .mast h1{font-size:22px}
+  .stagegrid{grid-template-columns:1fr}
+  .timeline li{flex-wrap:wrap}
+  .timeline .t{flex-basis:100%}
+  h2 em{display:block}
+  .qlist li{padding:10px 12px}
+}
+</style>
+</head>
+<body>
+<header class="mast">
+  <div class="wrap">
+    <div class="kicker">ICM Asset Management Presentation · 學習筆記</div>
+    <h1>Stage 3 · 公司與講者研究</h1>
+    <div class="sub">Company &amp; Presenter — 認識 ICM 與 John Courtliff</div>
+    <div class="meta">活動：2026 年 8 月 21 日（五）12:20 ｜ JW Marriott Hong Kong ｜ 預計學習時間：40 分鐘</div>
+    <div class="actions">
+      <button onclick="window.print()">列印 Print</button>
+      <span id="prog-lab"></span>
+    </div>
+    <div class="prog"><div id="prog"></div></div>
+  </div>
+</header>
+
+<div id="toolbar"></div>
+
+<div class="wrap">
+
+  <section>
+    <h2><span class="no">01</span> 公司檔案 <em>ICM Fact Sheet</em></h2>
+    <div class="rule"></div>
+    <p>這些資料來自活動邀請，背熟「粗體」部分。更多細節以講座現場公佈為準。</p>
+    <table>
+      <tr><th style="width:30%">項目</th><th>資料</th></tr>
+      <tr><td>公司名稱</td><td><b>ICM Asset Management</b></td></tr>
+      <tr><td>業務性質</td><td><b>多策略另類投資公司</b>（multi-strategy alternative investment firm）— 房地產、音樂版稅、私募信貸</td></tr>
+      <tr><td>管理資產</td><td><b>超過 20 億美元</b>（over $2.0 billion in assets）</td></tr>
+      <tr><td>總部</td><td>加拿大卡加利（<b>Calgary, Canada</b>）</td></tr>
+      <tr><td>現有辦事處</td><td>德國、美國、墨西哥</td></tr>
+      <tr><td>最新動向</td><td><b>拓展香港</b>（expanding to Hong Kong）</td></tr>
+      <tr><td>客戶</td><td>機構配置者（institutional allocators）與家族辦公室（family offices）</td></tr>
+      <tr><td>核心優勢</td><td>節稅、跨境資金流動（tax-efficient, cross-border capital flows）</td></tr>
+      <tr><td>聯絡</td><td>info@icmasetmanagement.asia ｜ www.icmasetmanagement.asia</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2><span class="no">02</span> 為何投資這三大策略？ <em>Why These Three Strategies?</em></h2>
+    <div class="rule"></div>
+    <p>三個策略各有「賣點」，講者很可能會逐個解釋。以下是你要捕捉的重點：</p>
+
+    <div class="card">
+      <h3><span class="st">Real Estate 房地產</span>賣點：有形資產、抗通脹</h3>
+      <p>物業是有形資產（tangible asset），通脹時價值通常跟隨上升，租金亦可隨通脹調整。講者會強調「穩定收入」。</p>
+      <div class="en-line"><b>聽講時捕捉</b>stable income ・ rental income ・ property value ・ inflation</div>
+    </div>
+
+    <div class="card">
+      <h3><span class="st">Music Royalties 音樂版稅</span>賣點：數碼時代的穩定現金流</h3>
+      <p>串流平台（Spotify、Apple Music 等）令音樂收入全球化和持續化。買入音樂目錄就像買入「永遠有人聽」的收租物業。</p>
+      <div class="en-line"><b>聽講時捕捉</b>streaming ・ catalog ・ steady cash flow ・ growing asset class</div>
+    </div>
+
+    <div class="card">
+      <h3><span class="st">Private Credit 私募信貸</span>賣點：高於銀行貸款的回報</h3>
+      <p>銀行收緊借貸，企業轉向私募基金借錢。基金以較高利息放貸，賺取穩定收益率（yield）。</p>
+      <div class="en-line"><b>聽講時捕捉</b>lending ・ interest ・ attractive yield ・ demand for capital</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="no">03</span> 講者介紹 <em>The Presenter: Mr. John Courtliff</em></h2>
+    <div class="rule"></div>
+    <div class="card">
+      <h3>Mr. John Courtliff — CEO &amp; Partner（行政總裁兼合夥人）</h3>
+      <p><b>CEO 做甚麼：</b>負責公司的整體方向、策略和領導團隊 — sets the company&rsquo;s strategy and leads the team。</p>
+      <p><b>Partner 代表甚麼：</b>擁有公司一部分 — owns part of the firm，所以他的利益與投資者一致，講的話可信度高。</p>
+      <p><b>讀音提示：</b>John（「尊」，與「don」同韻）Courtliff（「確-里夫」，重音在前）。</p>
+      <div class="callout" style="margin-bottom:0">
+        <b class="t">聽講時留意（暫無官方簡介）</b>
+        邀請函沒有附上講者簡歷。聽講時特別留意：他在 ICM 工作多久？行業年資多少？為何由他主導亞洲拓展？把聽到的資訊記在筆記上，這頁便會變成完整的人物檔案。以下分析屬合理推測，實際以現場資訊為準。
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="no">04</span> 為何來香港？ <em>Why Hong Kong? (Likely Talking Points)</em></h2>
+    <div class="rule"></div>
+    <p>以下是講座很可能觸及的話題（推測，以現場為準）。聽到這些話題，就知道他在講擴張計劃：</p>
+    <ul style="padding-left:22px">
+      <li><b>亞洲家族辦公室快速增長</b> — Asia&rsquo;s family office boom。香港是亞洲財富管理中心之一，家族辦公室雲集。</li>
+      <li><b>香港是跨境資金樞紐</b> — Hong Kong as a gateway for cross-border capital。資金進出亞洲的門戶。</li>
+      <li><b>另類投資需求上升</b> — 中國內地與東南亞投資者對房地產、私募信貸等另類投資的興趣增加。</li>
+      <li><b>節稅架構對亞洲客戶有吸引力</b> — tax-efficient structures appeal to Asian clients。</li>
+    </ul>
+    <div class="en-line"><b>一句英文記住</b>Hong Kong is the gateway for cross-border capital flows in Asia.</div>
+  </section>
+
+  <section>
+    <h2><span class="no">05</span> 演講結構預測 <em>Likely Structure of the Presentation</em></h2>
+    <div class="rule"></div>
+    <ul class="timeline">
+      <li><span class="t">12:20 開始</span><span class="d"><b>歡迎與介紹 Welcome &amp; Intro</b><span>主辦方致辭、介紹講者（約 2–3 分鐘）</span></span></li>
+      <li><span class="t">之後</span><span class="d"><b>ICM 是誰 Who We Are</b><span>公司背景、AUM、客戶群（約 5 分鐘）</span></span></li>
+      <li><span class="t">之後</span><span class="d"><b>三大策略 Our Strategies</b><span>房地產、音樂版稅、私募信貸逐個介紹（約 10–15 分鐘）</span></span></li>
+      <li><span class="t">之後</span><span class="d"><b>為何另類投資 Why Alternatives</b><span>分散風險、穩定收入、跨境節稅（約 5 分鐘）</span></span></li>
+      <li><span class="t">之後</span><span class="d"><b>亞洲與香港計劃 Asia / Hong Kong Plans</b><span>拓展策略、如何與香港客戶合作（約 5–10 分鐘）</span></span></li>
+      <li><span class="t">尾段</span><span class="d"><b>問答環節 Q&amp;A</b><span>自由發問（約 10–15 分鐘）</span></span></li>
+    </ul>
+    <p class="zh">時間為估計。這樣預測的用處：就算聽唔明某一段，也知道現在講到哪一部分，容易跟上。</p>
+  </section>
+
+  <section>
+    <h2><span class="no">06</span> 準備問題 <em>Questions to Ask</em></h2>
+    <div class="rule"></div>
+    <p>選 3 條你最有興趣的，寫在筆記上帶去。頭 3 條最適合新手，最安全。</p>
+    <ol class="qlist">
+      <li>
+        <div class="en">What advice would you give to someone who is new to alternative investments?</div>
+        <div class="zh">對剛接觸另類投資的人，你有甚麼建議？</div>
+        <div class="why">✔ 最安全也最有收穫 — 講者會很樂意分享。</div>
+      </li>
+      <li>
+        <div class="en">What are ICM&rsquo;s plans for Hong Kong?</div>
+        <div class="zh">ICM 在香港有甚麼計劃？</div>
+        <div class="why">✔ 應景問題，肯定有答案。</div>
+      </li>
+      <li>
+        <div class="en">How do music royalties work as an investment?</div>
+        <div class="zh">音樂版稅作為投資是如何運作的？</div>
+        <div class="why">✔ 有趣且容易理解，講者喜歡這類問題。</div>
+      </li>
+      <li>
+        <div class="en">Which strategy is growing fastest at ICM?</div>
+        <div class="zh">ICM 哪個策略增長最快？</div>
+        <div class="why">聽完三大策略後問，顯示你有留心。</div>
+      </li>
+      <li>
+        <div class="en">How do you choose the companies you lend to?</div>
+        <div class="zh">你們如何選擇放貸對象？</div>
+        <div class="why">關於風險控制，任何投資者都會問。</div>
+      </li>
+      <li>
+        <div class="en">What role will Asia play in ICM&rsquo;s growth?</div>
+        <div class="zh">亞洲在 ICM 的增長中扮演甚麼角色？</div>
+        <div class="why">配合香港拓展主題。</div>
+      </li>
+      <li>
+        <div class="en">How can family offices in Hong Kong work with ICM?</div>
+        <div class="zh">香港的家族辦公室如何與 ICM 合作？</div>
+        <div class="why">如果你是經財富管理經理登記的，這問題特別相關。</div>
+      </li>
+      <li>
+        <div class="en">What does &ldquo;tax-efficient&rdquo; mean in practice?</div>
+        <div class="zh">「稅務高效」在實際運作上是甚麼意思？</div>
+        <div class="why">ICM 的核心賣點之一，值得聽官方解釋。</div>
+      </li>
+    </ol>
+    <div class="callout">
+      <b class="t">發問小貼士</b>
+      不用怕英文不好：先講 <i>&ldquo;Thank you for the great talk. My question is…&rdquo;</i>，然後用最簡單的句子問。即使文法不完美，敢問已經贏。
+    </div>
+  </section>
+
+  <footer class="nav">
+    <a href="index.html">總覽 Index</a>
+    <a href="note-stage1.html">1 詞彙與句型</a>
+    <a href="note-stage2.html">2 金融基礎</a>
+    <a class="cur" href="note-stage3.html">3 公司與講者</a>
+    <a href="note-stage4.html">4 當日攻略</a>
+    <a href="note-stage5.html">5 總複習速查</a>
+  </footer>
+
+</div>
+<script>window.STUDY={key:'icm-stage3-done',name:'Stage 3 · 公司與講者研究'};</script>
+<script src="study.js"></script>
+</body>
+</html>

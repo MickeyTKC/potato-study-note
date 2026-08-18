@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage 4 · 活動當日攻略 — ICM 講座準備</title>
+<style>
+:root{
+  --paper:#f5f2e9; --surface:#fffdf6; --ink:#26241d; --muted:#6f6352;
+  --line:#ddd3ba; --accent:#8a6d1f; --soft:#f2ead2; --good:#2f6b4f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+ font-family:"Segoe UI","PingFang TC","Microsoft JhengHei","Noto Sans TC","Helvetica Neue",sans-serif;
+ line-height:1.7;font-size:16px}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px 90px}
+.mast{background:#26241d;color:#f5f2e9;padding:36px 0 30px;border-bottom:5px solid var(--accent)}
+.mast .kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#c9b77f;margin:0 0 10px}
+.mast h1{margin:0 0 4px;font-family:Georgia,"Palatino Linotype","Noto Serif TC",serif;font-size:34px;line-height:1.2}
+.mast .sub{font-size:16px;color:#d9d2bd;margin-bottom:10px}
+.mast .meta{font-size:13px;color:#a79e86}
+.actions{margin-top:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+button{font:inherit;background:var(--accent);color:#fffdf6;border:0;border-radius:4px;padding:7px 14px;cursor:pointer}
+button:hover{background:#75591a}
+#prog-lab{font-size:12.5px;color:#c9b77f}
+.prog{height:6px;background:#3d3a30;border-radius:3px;margin-top:10px;overflow:hidden}
+#prog{height:100%;width:0;background:#a98f3f;transition:width .25s}
+section{margin:40px 0}
+h2{font-family:Georgia,"Palatino Linotype","Noto Serif TC",serif;font-size:24px;margin:0 0 4px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+h2 .no{color:var(--accent);font-size:15px;letter-spacing:.1em;font-family:"Segoe UI",sans-serif}
+h2 em{font-style:normal;font-size:14px;color:var(--muted);font-weight:normal}
+.rule{height:3px;background:var(--accent);width:64px;margin:6px 0 18px;border-radius:2px}
+h3{font-size:18px;margin:30px 0 10px;font-family:Georgia,"Palatino Linotype","Noto Serif TC",serif}
+p{margin:10px 0}
+.zh{color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin:14px 0;box-shadow:0 1px 2px rgba(38,36,29,.05)}
+.card h3{margin:0 0 8px;font-size:18px}
+.card h3 .st{color:var(--accent);font-size:12.5px;letter-spacing:.08em;font-family:"Segoe UI",sans-serif;display:block;text-transform:uppercase;margin-bottom:2px}
+.en-line{background:var(--soft);border-radius:6px;padding:10px 14px;margin:10px 0;font-size:15px}
+.en-line b{color:var(--accent);font-size:12px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:2px}
+table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:12px 0}
+th{background:#efe7d2;text-align:left;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:#4d4634;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid var(--line);vertical-align:top;font-size:15px}
+tr:nth-child(even) td{background:#fbf8ef}
+.callout{background:var(--soft);border-top:3px solid var(--accent);border-radius:0 0 8px 8px;padding:14px 18px;margin:16px 0}
+.callout b.t{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:6px}
+.timeline{list-style:none;padding:0;margin:14px 0}
+.timeline li{display:flex;gap:14px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.timeline .t{flex:none;width:74px;font-family:Consolas,Menlo,monospace;font-size:13.5px;color:var(--accent);font-weight:700}
+.timeline .d b{display:block}
+.timeline .d span{font-size:14px;color:var(--muted)}
+.checklist{list-style:none;padding:0;margin:12px 0}
+.checklist li{padding:8px 0;border-bottom:1px dashed var(--line);display:flex;gap:10px;align-items:baseline}
+.checklist input{width:16px;height:16px;accent-color:var(--good);flex:none;transform:translateY(2px)}
+.checklist .zh{font-size:13.5px}
+.script{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin:12px 0}
+.script .who{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:6px}
+.script .en{font-weight:600;font-size:15.5px}
+.script .zh{font-size:14px;margin-top:2px}
+footer.nav{margin-top:60px;border-top:2px solid var(--line);padding-top:18px;display:flex;flex-wrap:wrap;gap:8px}
+footer.nav a{color:var(--accent);text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:6px 14px;font-size:14px;background:var(--surface)}
+footer.nav a:hover{border-color:var(--accent)}
+footer.nav a.cur{background:var(--accent);color:#fffdf6;border-color:var(--accent)}
+@media print{
+  body{background:#fff}
+  .mast{background:#26241d !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .actions,.prog{display:none}
+  a{color:inherit;text-decoration:none}
+  section{margin:24px 0}
+  .card,.script{box-shadow:none}
+}
+@media (max-width:640px){
+  body{font-size:15px;line-height:1.6}
+  .wrap{padding:0 14px 70px}
+  .mast{padding:24px 0 22px}
+  .mast h1{font-size:clamp(22px,6.5vw,28px)}
+  .mast .sub{font-size:14px}
+  .mast .kicker{letter-spacing:.14em}
+  .mast .meta{font-size:12px;line-height:1.5}
+  h2{font-size:20px;gap:8px}
+  h2 .no{font-size:13px}
+  h2 em{font-size:13px}
+  .card{padding:14px}
+  .en-line{padding:8px 12px;font-size:14px}
+  .callout{padding:12px 14px}
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  th,td{padding:8px 9px;font-size:14px}
+  th{white-space:nowrap}
+  .row{padding:10px 12px}
+  .row label{align-items:center}
+  .row .ex{margin-left:0}
+  .sent .en,.sent .zh{margin-left:0}
+  .timeline .t{width:auto;min-width:56px;font-size:12.5px}
+  .flow .fbox{flex-basis:140px}
+  .qa .q,.qa .a{padding:9px 12px;font-size:14px}
+  .checklist li{padding:7px 0}
+  footer.nav a{padding:6px 10px;font-size:13px}
+  .stagegrid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+}
+@media (max-width:420px){
+  .mast h1{font-size:22px}
+  .stagegrid{grid-template-columns:1fr}
+  .timeline li{flex-wrap:wrap}
+  .timeline .t{flex-basis:100%}
+  h2 em{display:block}
+  .qlist li{padding:10px 12px}
+}
+</style>
+</head>
+<body>
+<header class="mast">
+  <div class="wrap">
+    <div class="kicker">ICM Asset Management Presentation · 學習筆記</div>
+    <h1>Stage 4 · 活動當日攻略</h1>
+    <div class="sub">Event-Day Playbook — 8 月 21 日當天完整行動指南</div>
+    <div class="meta">活動：2026 年 8 月 21 日（五）12:00 登記 ｜ 12:20 開始 ｜ JW Marriott Hong Kong ｜ 預計學習時間：30 分鐘</div>
+    <div class="actions">
+      <button onclick="window.print()">列印 Print</button>
+      <span id="prog-lab"></span>
+    </div>
+    <div class="prog"><div id="prog"></div></div>
+  </div>
+</header>
+
+<div id="toolbar"></div>
+
+<div class="wrap">
+
+  <section>
+    <h2><span class="no">01</span> 當日時間線 <em>Timeline</em></h2>
+    <div class="rule"></div>
+    <ul class="timeline">
+      <li><span class="t">11:45</span><span class="d"><b>到達酒店</b><span>預留找路、洗手間、入場時間。早到可以坐到前面，聽得更清楚。</span></span></li>
+      <li><span class="t">12:00</span><span class="d"><b>登記 Registration</b><span>報到、確認名字、取名牌，然後入座。</span></span></li>
+      <li><span class="t">12:20</span><span class="d"><b>活動開始</b><span>歡迎致辭 → 介紹講者 → 主題演講。</span></span></li>
+      <li><span class="t">約 13:00</span><span class="d"><b>三大策略介紹</b><span>房地產、音樂版稅、私募信貸 — 記下關鍵字和數字。</span></span></li>
+      <li><span class="t">約 13:40</span><span class="d"><b>問答環節 Q&amp;A</b><span>舉手發問或專心聽別人的問題。</span></span></li>
+      <li><span class="t">約 14:00</span><span class="d"><b>交流時段 Networking</b><span>把握機會與講者和參加者交流（見第 04 節腳本）。</span></span></li>
+    </ul>
+    <p class="zh">實際時間以現場流程為準。重點：寧早勿遲，12:00 前到場。</p>
+  </section>
+
+  <section>
+    <h2><span class="no">02</span> 場地與交通 <em>Venue &amp; Getting There</em></h2>
+    <div class="rule"></div>
+    <div class="card">
+      <table style="margin:0">
+        <tr><th style="width:30%">項目</th><th>資料</th></tr>
+        <tr><td>地址</td><td>JW Marriott Hotel Hong Kong（香港 JW 萬豪酒店），金鐘太古廣場（Pacific Place, 88 Queensway, Admiralty）</td></tr>
+        <tr><td>會場</td><td><b>Salon 6, Ballroom（宴會廳）, Level 3（三樓）</b></td></tr>
+        <tr><td>港鐵</td><td>金鐘站，經太古廣場步行前往酒店（酒店與太古廣場相連）</td></tr>
+        <tr><td>的士／巴士</td><td>金鐘道 88 號太古廣場入口；請司機前往 JW Marriott Hotel 正門</td></tr>
+      </table>
+    </div>
+    <div class="callout">
+      <b class="t">小貼士</b>
+      出發前用 Google Maps 搜尋「JW Marriott Hong Kong」確認路線。到達後問職員 <i>&ldquo;Where is the ballroom on Level 3?&rdquo;</i>（三樓宴會廳在哪裏？）。
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="no">03</span> 攜帶清單 <em>What to Bring</em></h2>
+    <div class="rule"></div>
+    <ul class="checklist">
+      <li><input type="checkbox" class="done"><span><b>名片</b>（如有）Business cards <span class="zh">— 交流時交換用</span></span></li>
+      <li><input type="checkbox" class="done"><span><b>筆記本＋筆</b> Notebook &amp; pen <span class="zh">— 記數字、關鍵字</span></span></li>
+      <li><input type="checkbox" class="done"><span><b>打印的 Stage 5 速查卡</b> Printed Stage 5 cheat sheet <span class="zh">— 活動前最後一分鐘重溫</span></span></li>
+      <li><input type="checkbox" class="done"><span><b>準備好的 3 條問題</b> Your 3 questions <span class="zh">— 寫在筆記本第一頁</span></span></li>
+      <li><input type="checkbox" class="done"><span><b>手機設靜音</b> Phone on silent</span></li>
+      <li><input type="checkbox" class="done"><span><b>證件</b> ID <span class="zh">— 酒店或登記可能要求出示</span></span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="no">04</span> 開場白腳本 <em>Small Talk Scripts</em></h2>
+    <div class="rule"></div>
+    <p>三套腳本，背熟即可。見到人不知道說甚麼，就從 A 開始。</p>
+
+    <div class="script">
+      <div class="who">A · 登記時 At registration</div>
+      <div class="en">Good afternoon. I&rsquo;m here for the ICM presentation. My name is ____.</div>
+      <div class="zh">午安，我來參加 ICM 講座。我叫＿＿＿。</div>
+    </div>
+    <div class="script">
+      <div class="who">B · 自我介紹 At networking</div>
+      <div class="en">Hi, I&rsquo;m ____. This is my first ICM event. I&rsquo;m here to learn about alternative investments.</div>
+      <div class="zh">你好，我叫＿＿＿。這是我第一次參加 ICM 活動，我來學習另類投資。</div>
+    </div>
+    <div class="script">
+      <div class="who">C · 延續對話 Keep the conversation going</div>
+      <div class="en">What brings you here today? / Have you been to other ICM events? / How did you hear about ICM?</div>
+      <div class="zh">你今日為甚麼來參加？／你參加過其他 ICM 活動嗎？／你怎樣認識 ICM？</div>
+    </div>
+    <p class="zh">另外準備 3 句關於自己的句子（工作、興趣、為何對投資有興趣），任何場合都用得上。</p>
+  </section>
+
+  <section>
+    <h2><span class="no">05</span> 聆聽策略 <em>Listening Strategies</em></h2>
+    <div class="rule"></div>
+    <div class="card">
+      <h3>英文未夠好，點樣聽得最多？</h3>
+      <ul style="padding-left:20px;margin:6px 0">
+        <li><b>抓關鍵字</b>：聽到 <b>real estate、royalties、private credit、Hong Kong、growth、yield</b> 就立刻記下。這些字出現的位置就是重點。</li>
+        <li><b>記數字</b>：寫下所有聽到的數字（金額、年份、百分比），會後再整理。數字最容易跟。</li>
+        <li><b>睇投影片</b>：講者會把重點寫在螢幕上，聽不懂就瞄投影片，通常已有答案。</li>
+        <li><b>唔好死執著</b>：聽唔明一句，就聽下一句。無人會逐句考你。</li>
+        <li><b>錄音要問准</b>：如想錄音，先問講者或主辦方（商業場合多數不建議）。筆記夠用。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="no">06</span> 問問題工具箱 <em>Q&amp;A Survival Phrases</em></h2>
+    <div class="rule"></div>
+    <table>
+      <tr><th style="width:55%">英文</th><th>中文</th></tr>
+      <tr><td>Could you say that again, please?</td><td>可以再說一次嗎？</td></tr>
+      <tr><td>Could you speak more slowly, please?</td><td>可以說慢一點嗎？</td></tr>
+      <tr><td>What does <i>____</i> mean?</td><td>＿＿＿是什麼意思？</td></tr>
+      <tr><td>Can you give an example?</td><td>可以舉個例子嗎？</td></tr>
+      <tr><td>My question is about <i>____</i>.</td><td>我的問題是關於＿＿＿。</td></tr>
+      <tr><td>Thank you. That was very helpful.</td><td>多謝，很有幫助。</td></tr>
+    </table>
+    <div class="callout">
+      <b class="t">發問前</b>
+      深呼吸 → 舉手 → 先講 <i>&ldquo;Thank you for the great talk&rdquo;</i> → 用最簡單的句子問。文法不完美完全冇問題。
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="no">07</span> 活動後跟進 <em>Follow-Up</em></h2>
+    <div class="rule"></div>
+    <div class="card">
+      <h3>24 小時內寄出感謝電郵</h3>
+      <p class="zh">給講者或主辦方（地址見活動資料：info@icmasetmanagement.asia）。複製改一改就可以用：</p>
+      <div class="en-line">
+        <b>Email 範本</b>
+        Subject: Thank you — ICM Presentation, August 21<br><br>
+        Dear Mr. Courtliff,<br><br>
+        Thank you very much for your presentation today. I learned a lot about alternative investments and about ICM&rsquo;s plans for Hong Kong. I would be delighted to stay in touch.<br><br>
+        Best regards,<br>____
+      </div>
+      <div class="en-line">
+        <b>LinkedIn 訊息範本</b>
+        Dear Mr. Courtliff, it was a pleasure to meet you at the ICM presentation. I look forward to learning more about ICM&rsquo;s work in Hong Kong. Best, ____
+      </div>
+      <p class="zh">之後：複習筆記，整理「3 個 takeaways」，把跟進日期記在行事曆。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="no">08</span> 心態準備 <em>Mindset</em></h2>
+    <div class="rule"></div>
+    <div class="callout">
+      <b class="t">最重要的一件事</b>
+      你的目標唔係「聽得明全部」，而係：<b>帶走 3 個重點 ＋ 認識 2 位新朋友</b>。英文唔好都敢出席、敢開口，已經比大多數人強。這是一場學習活動，唔係考試。
+    </div>
+  </section>
+
+  <footer class="nav">
+    <a href="index.html">總覽 Index</a>
+    <a href="note-stage1.html">1 詞彙與句型</a>
+    <a href="note-stage2.html">2 金融基礎</a>
+    <a href="note-stage3.html">3 公司與講者</a>
+    <a class="cur" href="note-stage4.html">4 當日攻略</a>
+    <a href="note-stage5.html">5 總複習速查</a>
+  </footer>
+
+</div>
+<script>window.STUDY={key:'icm-stage4-done',name:'Stage 4 · 活動當日攻略'};</script>
+<script src="study.js"></script>
+</body>
+</html>
